@@ -5,28 +5,32 @@
  First you need import the main file and the exception,
  Example:
  ```java
-  import morse.Morse;
-  import morse.NotFoundInAlphabetException;
+  import kaw.morse.Converter;
+  import kaw.morse.NotFoundInAlphabetException;
  ```
  
  And later of that you can use: 
  ```java
   try{
-      System.out.println(Morse.stringToMorse("Hello world!"));
+      System.out.println(Converter.stringToMorse("Hello world!"));
   }catch(NotFoundInAlphabetException ex){
       ex.printStackTrace();
   }
  ```
- Output:
- `.... . .-.. .-.. --- ....... .-- --- .-. .-.. -.. -.-.--`
+ Output: `.... . .-.. .-.. --- ....... .-- --- .-. .-.. -.. -.-.--`
 
  If you want convert Morse code to string, you can use:
  ```java
   try{
-      System.out.println(Morse.morseToString(".... . .-.. .-.. --- ....... .-- --- .-. .-.. -.. -.-.--"));
+      System.out.println(Converter.morseToString(".... . .-.. .-.. --- ....... .-- --- .-. .-.. -.. -.-.--"));
   }catch(NotFoundInAlphabetException ex){
       ex.printStackTrace();
   }
  ```
- Output:
- `hello world!`
+ Output: `hello world!`
+
+### [JavaDoc](https://morse-java-lib.ml)
+
+### TODOs:
+ - [ ] MorseCodes object
+ - [ ] Make this lib aren't only for Morse code

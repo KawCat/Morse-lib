@@ -1,10 +1,11 @@
-package morse;
+package kaw.morse;
 
 /**
+ * A library for convert a text to Converter code and vice-versa in Java
  * @author Kaw
  * @version 1.0.0
  */
-public class Morse {
+public class Converter {
     private static final String[] STRING_ALPHABET = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", "?", "'", "!", "/", "(", ")", "&", ":", ";", "=", "+", "-", "_", "\"", "$", "@", " "};
     private static final String[] MORSE_ALPHABET = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", ".-.-.-", "--..--", "..--..", ".----.", "-.-.--", "-..-.", "-.--.", "-.--.-", ".-...", "---...", "-.-.-.", "-...-", ".-.-.", "-.....-", "..--.-", ".-..-.", "...-..-", ".--.-.", "......."};
     private static boolean founded;
@@ -13,9 +14,10 @@ public class Morse {
     private static int i;
     
     /**
-     * @param string A string (A-Z, a-z, 0-9, [.], [,], [?], ['], [!], [/], [(], [)], [&], [:], [;], [=], [+], [-], [_], ["], [$] and [@])
-     * @return Returns the conversion results from string to Morse code ([.], [-])
-     * @throws NotFoundInAlphabetException A character is not found in the Morse code alphabet
+     * Convert a String to Converter code
+     * @param string A String (A-Z, a-z, 0-9, [.], [,], [?], ['], [!], [/], [(], [)], [&], [:], [;], [=], [+], [-], [_], ["], [$] and [@])
+     * @return Returns the conversion results from text to Converter code ([.], [-])
+     * @throws NotFoundInAlphabetException A character is not found in the Converter code alphabet
      */
     public static String stringToMorse(String string) throws NotFoundInAlphabetException{
         char[] chars = string.toCharArray();
@@ -51,9 +53,10 @@ public class Morse {
     }
     
     /**
-     * @param morse A Morse code ([.], [-])
-     * @return Returns the conversion results from Morse code to string (a-z, 0-9, [.], [,], [?], ['], [!], [/], [(], [)], [&], [:], [;], [=], [+], [-], [_], ["], [$] and [@])
-     * @throws NotFoundInAlphabetException A Morse code not found in the string alphabet.
+     * Convert a Converter code to String
+     * @param morse A Converter code ([.], [-])
+     * @return Returns the conversion results from Converter code to text (a-z, 0-9, [.], [,], [?], ['], [!], [/], [(], [)], [&], [:], [;], [=], [+], [-], [_], ["], [$] and [@])
+     * @throws NotFoundInAlphabetException A Converter code not found in the string alphabet.
      */
     public static String morseToString(String morse) throws NotFoundInAlphabetException{
         String[] codes = morse.split(" ");
@@ -93,8 +96,8 @@ public class Morse {
         String text = null;
                 
         try {
-            morse = Morse.stringToMorse(input);
-            text = Morse.morseToString(morse);
+            morse = Converter.stringToMorse(input);
+            text = Converter.morseToString(morse);
         } catch (NotFoundInAlphabetException ex) {
             ex.printStackTrace();
         }

@@ -1,11 +1,12 @@
-package morse;
+package kaw.morse;
 
 /**
+ * Exception on not found in alphabet a character or Morse code
  * @author Kaw
  * @version 1.0.0
  */
 public class NotFoundInAlphabetException extends Exception{
-    public static final long serialVersionUID = 700L;
+    private static final long serialVersionUID = 700L;
     
     /**
      * @param message A message to display on exception
